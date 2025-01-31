@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background-color: bisque;
+}
+
+.cards {
+  width: 100%;
+  height: 100%;
+
+  display: grid;
+  grid-template:
+    "header header header header" 25%
+    "article main main main" auto
+    "footer footer footer footer" 15% / 1fr 1fr 1fr 1fr;
+  gap: 10px;
+}
+
+.cards .card:nth-child(1) {
+  grid-area: header;
+  background-color: red;
+}
+
+.cards .card:nth-child(2) {
+  grid-area: header;
+  background-color: yellow;
+}
+
+.cards .card:nth-child(3) {
+  grid-area: article;
+  background-color: brown;
+}
+
+.cards .card:nth-child(4) {
+  grid-area: main;
+  background-color: magenta;
+}
+
+.cards .card:nth-child(5) {
+  grid-area: footer;
+  background-color: green;
+}

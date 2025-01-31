@@ -1,0 +1,55 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  /* Define o body como o tamanho da tela do dispositivo */
+  height: 100vh;
+  background-color: aquamarine;
+
+  /* Divide o display em grade */
+  display: grid;
+  /* Divide o body em quantas colunas desejar */
+  grid-template-columns: 1fr 1fr;
+  /* Divide o body em quantas linhas desejar */
+  grid-template-rows: 15% 20% 20% 30% 15%;
+  /* Nomeia as divisões do grid */
+  grid-template-areas:
+    "header header"
+    "article text1"
+    "article text2"
+    "main main"
+    "footer footer";
+}
+
+header {
+  background-color: cadetblue;
+  grid-area: header;
+}
+
+article {
+  background-color: azure;
+  grid-area: article;
+}
+
+.text1 {
+  background-color: violet;
+  grid-area: text1;
+}
+
+.text2 {
+  background-color: cornflowerblue;
+  grid-area: text2;
+}
+
+main {
+  background-color: darkmagenta;
+  grid-area: main;
+}
+
+footer {
+  background-color: khaki;
+  grid-area: footer;
+}
