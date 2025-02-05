@@ -1,3 +1,4 @@
+/* Código para limpar css */
 * {
   margin: 0;
   padding: 0;
@@ -5,46 +6,66 @@
 }
 
 body {
+  /* Tamanho do BODY como tamanho total da minha tela */
   height: 100vh;
   background-color: bisque;
 }
 
 .cards {
+  /* SECTION CARDS */
   width: 100%;
   height: 100%;
+  /* Espaço de 10px entre as divs */
   gap: 10px;
   display: grid;
+  /* Conteudo do meu site divido entre duas linhas e três colunas */
   grid-template: 1fr 1fr / 1fr 1fr 1fr;
 }
 
+/* Primeira DIV  */
 .cards .card:nth-child(1) {
+  /* Cor de fundo Vermelha */
   background-color: red;
 }
 
+/* Segunda DIV */
 .cards .card:nth-child(2) {
+  /* Cor de fundo roxa */
   background-color: purple;
 }
 
+/* Terceira DIV */
 .cards .card:nth-child(3) {
+  /* Cor de fundo laranja */
   background-color: orange;
 }
 
+/* Quarta DIV */
 .cards .card:nth-child(4) {
+  /* Cor de fundo Cadet Blue */
   background-color: cadetblue;
 }
 
+/* Quinta DIV */
 .cards .card:nth-child(5) {
+  /* Cor de fundo fuchsia */
   background-color: fuchsia;
 }
 
+/* Sexta DIV */
 .cards .card:nth-child(6) {
+  /* Cor de fundo Verde */
   background-color: green;
 }
+
+/* COmando usado para quando o tamanho maximo da minha tela for 520 pixels */
 @media (max-width: 520px) {
+  /* Meu contudo será dividido entre 6 linhas e uma coluna */
   .cards {
     grid-template: 1fr 1fr 1fr 1fr 1fr 1fr/ 1fr;
   }
 
+  /* O tamanho da coluna será definido automaticamente */
   .cards .card:nth-child(1),
   .cards .card:nth-child(2),
   .cards .card:nth-child(3),
