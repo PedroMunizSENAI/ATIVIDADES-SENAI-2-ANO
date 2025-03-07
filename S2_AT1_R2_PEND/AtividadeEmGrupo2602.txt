@@ -1,0 +1,151 @@
+ATV 1)
+let numero = parseFloat(prompt("Digite o número que deseja a tabuada: "));
+
+function tabuada(numero){
+    for(let i = 0; i <= 10; i++){
+        console.log(numero * i);
+    }
+}
+
+tabuada(numero);
+
+ATV 2)
+let numero = parseFloat(prompt("Digite o número: "));
+let soma = 0;
+
+function somaAteN(numero, soma){
+    for(let i = 1; i <= numero; i++){
+        soma += i;
+    }
+     console.log(soma);
+}
+
+somaAteN(numero, soma);
+
+ATV 3)
+let numero = parseFloat(prompt("Digite o número que deseja verificar se é primo: "));
+
+function ehPrimo(numero){
+    if(numero <= 1) return false;
+    
+    for(let i = 2; i < numero; i++){
+        if(numero % i === 0){
+            return false;
+        }
+    }
+    
+    return true;
+}
+
+console.log(ehPrimo(numero));
+
+ATV 4)
+let numero = prompt("Digite um número para a contagem regressiva: ");
+
+function contagemRegressiva(numero){
+    for(let i = numero; i >= 0; i--);
+    console.log(i);
+}
+
+contagemRegressiva(numero);
+
+ATV 5)
+let numero = parseInt(prompt("Adivinhe o número: "));
+
+function adivinharNumero(numero){
+    const aleatorio =  Math.floor (Math.random() * 11);
+    do{
+        if(numero != aleatorio){
+            console.log("Você errou, tente novamente!");
+            numero = parseInt(prompt("Adivinhe o número: "));
+        }
+    }
+    while(numero != aleatorio);
+}
+
+adivinharNumero(numero);
+console.log("Você acertou, parabéns!");
+
+ATV 6)
+let num1;
+let soma = 0;
+
+function somarAteNegativo(num1){
+    
+    do{
+      num1 = parseFloat(prompt("Digite o número: "));  
+      soma += num1; 
+      console.log(soma);
+    }while(num1 >= 0)
+}
+
+somarAteNegativo(num1);
+
+ATV 7)
+let numero = parseFloat(prompt("Digite o número: "));
+let soma = 0;
+
+function ehNumeroPerfeito(numero){
+    for(let i = 1; i < numero; i++){
+        if(numero%i === 0){
+            soma += i;
+        }
+    }
+    if(soma === numero) return true;
+    return false;
+}
+
+console.log(ehNumeroPerfeito(numero));
+
+ATV 8)
+let numero = parseFloat(prompt("Digite um número: "));
+
+function numerosPares(numero){
+    for(let i = 0; i <= numero; i += 2){
+        console.log(i);
+    }
+}
+
+numerosPares(numero);
+
+ATV 9)
+let num1 = parseFloat(prompt("Digite o primeiro valor: "));
+let num2 = parseFloat(prompt("Digite o segundo valor: "));
+let operacao = prompt("Digite a operação desejada: ");
+
+function calculadora(num1, num2, operacao){
+    if(operacao === "-"){
+        console.log(num1 - num2);
+    }else if(operacao === "+"){
+        console.log(num1 + num2);
+    }else if(operacao === "*"){
+        console.log(num1 * num2);
+    }else if(operacao === "/"){
+        console.log(num1 / num2);
+    }else{
+        console.log("Operação inválida!!!");
+    }
+}
+
+calculadora(num1, num2, operacao);
+
+ATV 10)
+let nota = parseFloat(prompt("Digite a sua nota: "));
+
+function classificarNota(nota){
+    if(nota === 0 || nota === 1 || nota === 2 || nota === 3){
+        console.log("Ruim!!!");
+    }else if(nota === 4 || nota === 5){
+        console.log("Regular!!!");
+    }else if(nota === 6 || nota === 7){
+        console.log("Bom!!!");
+    }else if(nota === 8 || nota === 9){
+        console.log("Ótimo!!!");
+    }else if(nota === 10){
+        console.log("Excelente!!!");
+    }else{
+        console.log("Nota inválida!!!");
+    }
+}
+
+classificarNota(nota);

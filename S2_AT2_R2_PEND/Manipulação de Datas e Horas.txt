@@ -1,0 +1,23 @@
+1.1 const data = new Date()
+
+function obterDataAtual(data) {
+    diaDoMes = data.getDate()
+    mesDoAno = data.getMonth()
+    Ano = data.getFullYear()
+    
+    console.log(`${diaDoMes}/${mesDoAno + 1}/${Ano}`)
+}
+
+obterDataAtual(data)
+
+1.2 const horario = new Date()
+
+function obterHoraAtual(horario) {
+    hours = horario.getHours()
+    minutes = horario.getMinutes()
+    seconds = horario.getSeconds()
+    
+    console.log(`${hours}:${minutes}:${seconds}`)
+}
+
+obterHoraAtual(horario)

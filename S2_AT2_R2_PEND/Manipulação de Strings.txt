@@ -1,0 +1,46 @@
+3.1 let texto = prompt("Digite um texto: ")
+
+function contarLetras(texto) {
+    espacoTexto = texto.replace(/\s/g, "")
+    console.log(`Numero de caracteres do texto: ${espacoTexto.length}`)
+}
+
+contarLetras(texto)
+
+3.2 let texto = prompt("Digite um texto para ser invertido: ")
+
+function inverterString(texto) {
+    const separaTexto = texto.split("")
+    const inverteTexto = separaTexto.reverse()
+    const uneTexto = inverteTexto.join("")
+    
+    return uneTexto
+}
+
+console.log(inverterString(texto))
+
+3.3 let texto = prompt("Digite um texto: ")
+
+function inverterString(texto) {
+    const separaTexto = texto.split("")
+    const inverteTexto = separaTexto.reverse()
+    const uneTexto = inverteTexto.join("")
+    
+    return uneTexto
+}
+inverterString(texto)
+
+const textoInvertido = inverterString(texto).toLowerCase().replace(/\s/g, "")
+
+function ehPalindromo(texto) {
+    espacoTexto = texto.replace(/\s/g, "")
+    console.log(espacoTexto)
+    minusculoTexto = espacoTexto.toLowerCase()
+   if (minusculoTexto === textoInvertido) {
+       return true
+   }else {
+       return false
+   }
+}
+
+console.log(ehPalindromo(texto))

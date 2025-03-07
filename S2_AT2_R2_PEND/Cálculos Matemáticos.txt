@@ -1,0 +1,36 @@
+2.1 let a = parseFloat(prompt("Digite Valor A: "))
+let b = parseFloat(prompt("Digite Valor B: "))
+
+function calcularHipotenusa(a, b) {
+    const c = ((a*a) + (b*b))
+    const hipotenusa = Math.sqrt(c)
+    
+    return hipotenusa
+}
+
+console.log(`O valor da hipotenusa é: ${calcularHipotenusa(a, b)}`)
+
+2.2 let min = parseFloat(prompt("Digite valor minimo: "))
+let max = parseFloat(prompt("Digite valor maximo: "))
+
+function  gerarNumeroAleatorio(min, max) {
+    const math = Math.random();
+    // console.log(math)
+    if (max >= min) {
+        return math * (max - min) + min
+    } else {
+        console.log("Valor não declarado corretamente")
+    }
+}
+
+console.log(gerarNumeroAleatorio(min, max))
+
+2.3 let n = parseFloat(prompt("Digite valor para fatoriar: "))
+let result = 1;
+function calcularFatorial(n) {
+    for(let i = n; i >= 1; i--) {
+        result *= i
+    }
+    return result
+}
+console.log(calcularFatorial(n))
