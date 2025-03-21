@@ -16,7 +16,7 @@ let max = parseFloat(prompt("Digite valor maximo: "))
 function  gerarNumeroAleatorio(min, max) {
     const math = Math.random();
     // console.log(math)
-    if (max >= min) {
+    if (max > min) {
         return math * (max - min) + min
     } else {
         console.log("Valor não declarado corretamente")
