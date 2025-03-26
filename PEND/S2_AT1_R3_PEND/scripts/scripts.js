@@ -1,5 +1,4 @@
 console.log("JS CONECTADO!");
-
 const formulario = document.getElementById("cadastroForm");
 const nome = document.getElementById("nome");
 const email = document.getElementById("email");
@@ -78,6 +77,69 @@ function maskPhoneNumber(event) {
 }
 /* --------------------------------------------------------------------- */
 
+/* ----------- FUNÇÃO PARA INSERIR MASCARA NO CPF ----------------- */
+
+function maskCPF(event) {
+  let cpf = event.target.value;
+
+  if (/[A-Za-zÀ-ÿ]/.test(cpf)) {
+    createDisplayMsgError("O CPF deve conter apenas números!");
+  } else {
+    createDisplayMsgError("");
+  }
+
+  cpf = cpf.replace(/\D/g, ""); // Remove os caracteres não numéricos
+
+  if (cpf.length > 11) {
+    cpf = cpf.substring(0, 11);
+  }
+
+  if (cpf.length > 3 && cpf.length <= 6) {
+    cpf = `${cpf.substring(0, 3)}.${cpf.substring(3)}`;
+  } else if (cpf.length > 6 && cpf.length <= 9) {
+    cpf = `${cpf.substring(0, 3)}.${cpf.substring(3, 6)}.${cpf.substring(6)}`;
+  } else if (cpf.length > 9 && cpf.length <= 11) {
+    cpf = `${cpf.substring(0, 3)}.${cpf.substring(3, 6)}.${cpf.substring(
+      6,
+      9
+    )}-${cpf.substring(9)}`;
+  }
+
+  event.target.value = cpf;
+}
+/* --------------------------------------------------------------------- */
+
+/* ----------- FUNÇÃO PARA INSERIR MASCARA NO RG ----------------- */
+function maskRG(event) {
+  let rg = event.target.value;
+
+  if (/[A-Za-zÀ-ÿ]/.test(rg)) {
+    createDisplayMsgError("O RG deve conter apenas números!");
+  } else {
+    createDisplayMsgError("");
+  }
+
+  rg = rg.replace(/\D/g, ""); // Remove os caracteres não numéricos
+
+  if (rg.length > 9) {
+    rg = rg.substring(0, 9);
+  }
+
+  if (rg.length > 2 && rg.length <= 5) {
+    rg = `${rg.substring(0, 2)}.${rg.substring(2)}`;
+  } else if (rg.length > 5 && rg.length <= 8) {
+    rg = `${rg.substring(0, 2)}.${rg.substring(2, 5)}.${rg.substring(5)}`;
+  } else if (rg.length > 8 && rg.length <= 9) {
+    rg = `${rg.substring(0, 2)}.${rg.substring(2, 5)}.${rg.substring(
+      5,
+      8
+    )}-${rg.substring(8)}`;
+  }
+
+  event.target.value = rg;
+}
+/* --------------------------------------------------------------------- */
+
 /* ------------- FUNÇÃO PARA VERIFICAR FORÇA DA SENHA ------------------ */
 function checkPasswordStrength(senha) {
   if (!/[a-z]/.test(senha)) {
@@ -147,7 +209,32 @@ function fetchDatas(event) {
 }
 /* --------------------------------------------------------------------- */
 
-formulario.addEventListener("submit", fetchDatas);
+/* ------------ FUNÇÃO PARA CRIAR "CHUVA" NO FORMULÁRIO ---------------- */
+
+const rainFunction = () => {
+  let rain = document.createElement("span");
+  // let cont_rain = document.getElementsByClassName("container_rain");
+  let cont_rain = document.querySelector(".container_rain");
+  let left = Math.floor(Math.random() * (310 - 65) + 65);
+  let duration = Math.random() * 5;
+
+  rain.classList.add("rain");
+  // cont_rain[0].appendChild(rain);
+  cont_rain.appendChild(rain);
+  rain.style.left = left + "px";
+  rain.style.animationDuration = 1 + duration;
+
+  setTimeout(() => {
+    // cont_rain[0].removeChild(rain);
+    cont_rain.removeChild(rain);
+  }, 1500);
+};
+
+setInterval(() => {
+  rainFunction();
+}, 250);
+
+/* --------------------------------------------------------------------- */
 
 nome.addEventListener("input", () => {
   if (nome.value && !checkNome()) {
@@ -175,24 +262,10 @@ senha.addEventListener("input", () => {
   }
 });
 
-function checkPasswordStrength(senha) {
-  if (!/[a-z]/.test(senha)) {
-    return "A senha deve ter pelo menos uma letra minúscula!";
-  }
-  if (!/[A-Z]/.test(senha)) {
-    return "A senha deve ter pelo menos uma letra maiúscula!";
-  }
-  if (!/[\W_]/.test(senha)) {
-    return "A senha deve ter pelo menos um caractere especial!";
-  }
-  if (!/\d/.test(senha)) {
-    return "A senha deve ter pelo menos um número!";
-  }
-  if (senha.length < 8) {
-    return "A senha deve ter pelo menos 8 caracteres!";
-  }
-
-  return null;
-}
+formulario.addEventListener("submit", fetchDatas);
 
 celular.addEventListener("input", maskPhoneNumber);
+
+cpf.addEventListener("input", maskCPF);
+
+rg.addEventListener("input", maskRG);
