@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>API</title>
+
+    <!-- LINK ICONS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- LINK CSS -->
+    <link rel="stylesheet" href="./styles/styles.css" />
+
+    <!-- LINK JAVASCRIPT -->
+    <script src="./scripts/scripts.js" defer></script>
+  </head>
+  <body>
+    <main class="container">
+      <form action="#" id="search">
+        <input type="text" id="city" placeholder="" />
+        <button type="submit">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </form>
+
+      <article class="content">
+        <h2 id="cityName">Nome da cidade</h2>
+        <div class="main_content">
+          <img id="img" src="./images/OIP-removebg-preview.png" alt="" />
+          <div class="text_content">
+            <p id="temp">23°</p>
+            <p id="clima">Nublado</p>
+          </div>
+        </div>
+      </article>
+
+      <article class="info">
+        <div class="tempmax">
+          <p id="tempmax">div tempmax</p>
+        </div>
+        <div class="umidade"><p id="umidade">div umidade</p></div>
+        <div class="tempmin">
+          <p id="tempmin">div tempmin</p>
+        </div>
+        <div class="vento">
+          <p id="vento">div vento</p>
+        </div>
+      </article>
+    </main>
+  </body>
+</html>

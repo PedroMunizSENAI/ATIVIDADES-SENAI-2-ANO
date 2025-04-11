@@ -1,0 +1,151 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+}
+
+body {
+  height: 100vh;
+  background: url("https://th.bing.com/th/id/R.4e709f6c3e44b35ff6e6fa437348bc1b?rik=yKNnsURUOBqQgg&pid=ImgRaw&r=0")
+    center / cover no-repeat;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  width: 40%;
+  height: 65%;
+  border-radius: 15px;
+
+  background-color: rgba(0, 0, 0, 0.7);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#search {
+  display: flex;
+  padding: 6px 12px;
+  gap: 10px;
+}
+
+#search input {
+  background: transparent;
+  border: none;
+  outline: none;
+  border-bottom: 0.5px solid rgb(255, 255, 255);
+  padding: 4px 8px;
+  color: #fff;
+}
+
+#search button {
+  font-size: 15px;
+  color: black;
+  background-color: transparent;
+  border: none;
+  color: #fff;
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 10px;
+}
+
+.content h2 {
+  position: absolute;
+  top: 0;
+
+  /* height: 20%; */
+
+  color: wheat;
+}
+
+.main_content {
+  height: 100%;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  justify-items: center;
+  align-items: center;
+
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.main_content img {
+  width: 100%;
+  height: 100%;
+}
+
+.text_content p {
+  color: wheat;
+}
+
+.text_content p:nth-child(1) {
+  font-size: 60px;
+}
+
+.text_content p:nth-child(2) {
+  font-size: 20px;
+}
+
+.info {
+  width: 100%;
+  height: 100%;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+
+  justify-items: center;
+  align-items: center;
+  padding: 10px;
+
+  gap: 10px;
+}
+
+.info p {
+  font-size: 20px;
+  color: wheat;
+}
+
+.tempmax {
+  width: 100%;
+  height: 100%;
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.umidade {
+  width: 100%;
+  height: 100%;
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.tempmin {
+  width: 100%;
+  height: 100%;
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.vento {
+  width: 100%;
+  height: 100%;
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
