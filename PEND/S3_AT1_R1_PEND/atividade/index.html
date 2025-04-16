@@ -29,29 +29,41 @@
         </button>
       </form>
 
-      <article class="content">
-        <h2 id="cityName">Nome da cidade</h2>
-        <div class="main_content">
-          <img id="img" src="./images/OIP-removebg-preview.png" alt="" />
-          <div class="text_content">
-            <p id="temp">23°</p>
-            <p id="clima">Nublado</p>
+      <div class="all_content" id="all_content">
+        <div class="content">
+          <h2 id="cityName"></h2>
+          <div class="main_content">
+            <img id="img" />
+            <div class="text_content">
+              <p id="temp"></p>
+              <p id="clima"></p>
+            </div>
           </div>
         </div>
-      </article>
 
-      <article class="info">
-        <div class="tempmax">
-          <p id="tempmax">div tempmax</p>
+        <div class="info">
+          <div class="tempmax">
+            <div class="info_title"><h3>Temp. Max</h3></div>
+            <i class="fa-solid fa-temperature-high"> </i>
+            <p id="tempmax"></p>
+          </div>
+          <div class="umidade">
+            <div class="info_title"><h3>Umidade</h3></div>
+            <i class="fa-solid fa-droplet"> </i>
+            <p id="umidade"></p>
+          </div>
+          <div class="tempmin">
+            <div class="info_title"><h3>Temp. Min</h3></div>
+            <i class="fa-solid fa-temperature-low"> </i>
+            <p id="tempmin"></p>
+          </div>
+          <div class="vento">
+            <div class="info_title"><h3>Vento</h3></div>
+            <i class="fa-solid fa-wind"> </i>
+            <p id="vento"></p>
+          </div>
         </div>
-        <div class="umidade"><p id="umidade">div umidade</p></div>
-        <div class="tempmin">
-          <p id="tempmin">div tempmin</p>
-        </div>
-        <div class="vento">
-          <p id="vento">div vento</p>
-        </div>
-      </article>
+      </div>
     </main>
   </body>
 </html>
