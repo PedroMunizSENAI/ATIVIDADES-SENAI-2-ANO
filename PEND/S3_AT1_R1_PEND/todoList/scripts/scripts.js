@@ -11,6 +11,17 @@ console.log(progress);
 console.log(progressNumbers);
 console.log(taskList);
 
+const updateProgress = () => {
+  const totalTasks = taskList.children.length;
+  const completedTasks = taskList.querySelectorAll(".checkbox:checked").length;
+
+  progress.style.width = totalTasks
+    ? `${(completedTasks / totalTasks) * 100}%`
+    : "0%";
+
+  progressNumbers.textContent = `${completedTasks} / ${totalTasks}`;
+};
+
 const addTask = (event, completed = false) => {
   event.preventDefault();
 
@@ -38,29 +49,36 @@ const addTask = (event, completed = false) => {
   const editBtn = li.querySelector(".edit_btn");
 
   if (completed) {
-    const isChecked = checkbox.isChecked;
-    li.classList.add("completed", isChecked);
+    li.classList.add("completed");
     editBtn.disabled = true;
-    editBtn.style.opacity = isChecked ? "0.5" : 1;
+    editBtn.style.opacity = "0.5";
     editBtn.style.pointerEvents = "none";
+    updateProgress();
   }
 
   checkbox.addEventListener("change", () => {
-    const isChecked = checkbox.isChecked;
+    const isChecked = checkbox.checked;
     li.classList.toggle("completed", isChecked);
+    editBtn.disabled = isChecked;
+    editBtn.style.opacity = isChecked ? "0.5" : "1";
+    editBtn.style.pointerEvents = isChecked ? "none" : "auto";
+    updateProgress();
   });
 
   editBtn.addEventListener("click", () => {
     taskInput.value = li.querySelector("span").textContent;
     li.remove();
+    updateProgress();
   });
 
   li.querySelector(".delete_btn").addEventListener("click", () => {
     li.remove();
+    updateProgress();
   });
 
   taskList.appendChild(li);
   taskInput.value = "";
+  updateProgress();
 };
 
 addTaskBtn.addEventListener("click", addTask);
