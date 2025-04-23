@@ -22,7 +22,7 @@ const updateProgress = () => {
   progressNumbers.textContent = `${completedTasks} / ${totalTasks}`;
 };
 
-const addTask = (event, completed = false) => {
+const addTask = (event, completed = false, checkCompletion = true) => {
   event.preventDefault();
 
   const taskText = taskInput.value.trim();
@@ -53,7 +53,6 @@ const addTask = (event, completed = false) => {
     editBtn.disabled = true;
     editBtn.style.opacity = "0.5";
     editBtn.style.pointerEvents = "none";
-    updateProgress();
   }
 
   checkbox.addEventListener("change", () => {
@@ -63,22 +62,26 @@ const addTask = (event, completed = false) => {
     editBtn.style.opacity = isChecked ? "0.5" : "1";
     editBtn.style.pointerEvents = isChecked ? "none" : "auto";
     updateProgress();
+    saveTaskLocalStorage();
   });
 
   editBtn.addEventListener("click", () => {
     taskInput.value = li.querySelector("span").textContent;
     li.remove();
     updateProgress();
+    saveTaskLocalStorage();
   });
 
   li.querySelector(".delete_btn").addEventListener("click", () => {
     li.remove();
     updateProgress();
+    saveTaskLocalStorage();
   });
 
   taskList.appendChild(li);
   taskInput.value = "";
-  updateProgress();
+  updateProgress(checkCompletion);
+  saveTaskLocalStorage();
 };
 
 addTaskBtn.addEventListener("click", addTask);
@@ -87,3 +90,25 @@ taskInput.addEventListener("keypress", (e) => {
     addTask(e);
   }
 });
+
+const saveTaskLocalStorage = () => {
+  const savedTasks = Array.from(taskList.querySelectorAll("li")).map((li) => ({
+    text: li.querySelector("span").textContent,
+    completed: li.querySelector(".checkbox").checked,
+  }));
+
+  localStorage.setItem("tasks", JSON.stringify(savedTasks));
+};
+
+const loadTaskFromStorage = () => {
+  const savedTasks = JSON.parse(localStorage.getItem("tasks")) || [];
+  savedTasks.forEach(({ text, completed }) => {
+    const fakeEvent = { preventDefault: () => {} };
+    taskInput.value = text;
+    addTask(fakeEvent, completed, false);
+  });
+
+  updateProgress();
+};
+
+loadTaskFromStorage();
