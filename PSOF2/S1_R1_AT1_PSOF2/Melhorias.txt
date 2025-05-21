@@ -1,0 +1,13 @@
+Melhorias:
+-Botão "esqueci minha senha" na página de login botão para voltar
+-Máscara nos campos de cadastro
+-Botão para voltar
+-Melhorar responsividade página dashboard
+-Remover dados do marcio
+-Adicionar página "SOBRE"
+-Adicionar READ.ME no diretório github
+-Melhorar acesso ao banco de dados
+-Remover acesso ao invalid_login
+-Quando aperta para voltar aba ele volta para o usuario logado mesmo depois de fazer logout
+-Se mudar um campo é possivel fazer login com o mesmo nome/email/celular
+-Comentar códigos adicionados
