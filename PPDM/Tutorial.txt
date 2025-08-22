@@ -1,0 +1,73 @@
+Comandos utilizados em React Native
+    npx create-expo-app --template
+    √ Choose a template: » Blank
+    √ What is your app named? ... nomedoseuprojeto
+    🚀 Cria um novo projeto Expo.
+
+
+    npx expo start
+    ▶️ Inicia o projeto.
+
+
+    npx expo start --tunnel
+    🔗 Inicia o projeto com suporte a conexões externas.
+
+
+    npx expo install react-native-web react-dom @expo/metro-runtime
+    🔧 Instala as dependências necessárias para executar o aplicativo no navegador.
+
+
+    npx expo start --web
+    🌐 Inicia o servidor de desenvolvimento no ambiente web.
+
+
+    npm install @react-navigation/native
+    🔖 Instala o pacote em seu projeto, que fornece as funcionalidades básicas para navegação.
+
+
+    npx expo install react-native-screens react-native-safe-area-context
+    📱 Instala dependências necessárias para o correto funcionamento do React Navigation em projetos Expo.
+
+
+    npm install @react-navigation/native-stack
+    ↔️ Instala o pacote Stack que gerencia a navegação entre diferentes telas.
+
+
+
+    npm install @react-navigation/bottom-tabs
+    ↔️ Instala o pacote bottom-tabs que gerencia a navegação entre diferentes telas.
+
+
+
+    npm install @react-navigation/drawer
+    ↔️ Instala o pacote drawer que gerencia a navegação entre diferentes telas.
+
+
+
+    npx expo install react-native-gesture-handler react-native-reanimated
+    ↔️ Instala duas bibliotecas essenciais para interações de gestos e animações suaves em aplicativos React Native.
+
+
+
+    npm i react-native-onboarding-swiper
+    ↔️ Instala o pacote onboarding-swiper para gerenciar telas onboard 
+
+
+
+    npm i lottie-react-native
+    ↔️ Instala o pacote lottie para gerenciar animações em arquivo JSON para utilizar na aplicação
+
+
+
+    npm i @react-native-async-storage/async-storage
+    ↔️ Instala o pacote async-storage para armazenar as informações na memória
+
+
+
+    https://icons.expo.fyi/Index
+    🔗 Link para o site dos icones da Expo Go ( FontAwesome, AntDesign, Feather ).
+
+
+
+    https://lottiefiles.com/pt/
+    🔗 Link para o site de animações do lottie (necessita do comando  npm i lottie-react-native)

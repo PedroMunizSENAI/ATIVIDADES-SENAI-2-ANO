@@ -1,0 +1,29 @@
+Components:
+Server - 
+	A base do projeto;
+Load Balancer - 
+	Um medidor entre client e server para não sobrecarregar.
+Proxy Reverse - 
+	Garante a segurança das requisições dos clients através de um protocolo (HTTPS por exemplo).
+Componente de armazenamento - 
+	Banco de dados: Senha, Usuario, E-mail;
+	Storage: Imagens, Videos, PDFS, Arquivos;
+	Cache: BD em memória ram, leitura e consulta mais rápida (não é tão seguro quanto um BD convencional e não garante a leitura dos dados).
+Componente de comunicação -
+	Message broker: Comunicação assincrona entre servidores distantes (Central de linha telefonica, protocolo MIQTT);
+	Fila: Ordem de requisições;
+	CDN: Armazena cópias de arquivos em vários servidores ao redor do mundo para uma melhor e mais rápida entrega de um conteúdo (Foto no Instagram);
+	Autenticação: Autenticar requisições (MFA);
+	Firewall: Sistema de segurança que monitora as saidas e entradas para proteger contra acessos não autorizados (WFA);
+	Agendador: Agendar tarefas;
+	Vault.
+Modelos -
+	C1: Escrever como o diagrama funciona (E se);
+	C2: Arquitetura de máquinas e components;
+	C3: Configuração de máquinas e components;
+	C4: Diagramação de classes.
+Padrões de arquitetura -
+	MVC;
+	Arquitetura Hexagonal;
+	Arquitetura Limpa;
+	Arquitetura em Camadas.
