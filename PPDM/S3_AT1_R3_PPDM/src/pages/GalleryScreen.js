@@ -56,14 +56,14 @@ function Photo({ item, index, scrollX }) {
       }}
     >
       <Animated.Image
-        source={{ uri: item.src.large }}
+        source={{ uri: item.Poster }}
         style={[{ flex: 1 }, estilo]}
       />
     </View>
   );
 }
 
-function BackdropPhoto({ photo, index, scrollX }) {
+function BackdropPhoto({ page, index, scrollX }) {
   const estilo = useAnimatedStyle(() => {
     return {
       opacity: interpolate(
@@ -75,14 +75,14 @@ function BackdropPhoto({ photo, index, scrollX }) {
   });
   return (
     <Animated.Image
-      source={{ uri: photo.src.large }}
+      source={{ uri: page.Poster }}
       style={[StyleSheet.absoluteFillObject, estilo]}
     />
   );
 }
 
 export default function GalleryScreen() {
-  const [data, setData] = useState({ photos: [] });
+  const [data, setData] = useState([]);
 
   useEffect(() => {
     fetchData();
@@ -97,23 +97,16 @@ export default function GalleryScreen() {
   const fetchData = async () => {
     try {
       const res = await axios.get(
-        `https://api.pexels.com/v1/search?query=${encodeURIComponent(
-          "mobile wallpaper"
-        )}&orientation=portrait`,
-        {
-          headers: {
-            Authorization:
-              "7Cvi5Ka37WX7UBLreqtQ5lCgOQdn2ePJ7SIcdnowCEPsfx2JQgIehsL8",
-          },
-        }
+        ` http://www.omdbapi.com/?s=movie&page=1&apikey=e1e08026`
       );
-      setData(res.data);
+      console.log(res.data.Search.slice(0, 10));
+      setData(res.data.Search.slice(0, 10));
     } catch (error) {
       console.log("Erro ao buscar as imagens : ", error);
     }
   };
 
-  if (data.photos.length === 0) {
+  if (data.Poster === 0) {
     return (
       <View style={styles.container}>
         <Text>Carregando...</Text>
@@ -124,10 +117,10 @@ export default function GalleryScreen() {
   return (
     <View style={styles.container}>
       <View style={StyleSheet.absoluteFillObject}>
-        {data.photos.map((photo, index) => (
+        {data.map((photo, index) => (
           <BackdropPhoto
-            key={photo.id}
-            photo={photo}
+            key={index}
+            page={photo}
             index={index}
             scrollX={scrollX}
           />
@@ -135,8 +128,8 @@ export default function GalleryScreen() {
       </View>
 
       <Animated.FlatList
-        data={data.photos}
-        keyExtractor={(item) => String(item.id)}
+        data={data}
+        keyExtractor={(index) => String(index)}
         horizontal
         snapToInterval={imageWidth + spacing}
         decelerationRate={"fast"}
