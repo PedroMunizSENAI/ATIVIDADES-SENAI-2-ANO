@@ -4,8 +4,9 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 // import OnboardingScreen from "../pages/OnboardingScreen";
-import HomeScreen from "../pages/HomeScreen";
+import LogInScreen from "../pages/LogInScreen";
 import GalleryScreen from "../pages/GalleryScreen";
+import HomeScreen from "../pages/HomeScreen";
 
 import { getItem } from "../components/AsyncStorage";
 
@@ -26,9 +27,9 @@ export default function AppNavigation() {
     console.log(typeof logged);
 
     if (logged === "1") {
-      setShowLogged(false);
-    } else {
       setShowLogged(true);
+    } else {
+      setShowLogged(false);
     }
   };
 
@@ -46,6 +47,11 @@ export default function AppNavigation() {
             options={{ headerShown: false }}
           />
           <Stack.Screen
+            name="LogIn"
+            component={LogInScreen}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
             name="Home"
             component={HomeScreen}
             options={{ headerShown: false }}
@@ -56,10 +62,15 @@ export default function AppNavigation() {
   } else {
     return (
       <NavigationContainer>
-        <Stack.Navigator initialRouteName="Gallery">
+        <Stack.Navigator initialRouteName="LogIn">
           <Stack.Screen
             name="Gallery"
             component={GalleryScreen}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="LogIn"
+            component={LogInScreen}
             options={{ headerShown: false }}
           />
           <Stack.Screen

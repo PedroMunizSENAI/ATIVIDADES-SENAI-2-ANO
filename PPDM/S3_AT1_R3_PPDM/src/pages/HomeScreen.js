@@ -9,8 +9,11 @@ import {
   TouchableOpacity,
 } from "react-native";
 
+import { removeItem } from "../components/AsyncStorage";
+
 import { setItem } from "../components/AsyncStorage";
-import { stylesSignIn } from "../styles/styles";
+
+import { stylesHome } from "../styles/styles";
 
 import { useState } from "react";
 
@@ -21,24 +24,23 @@ import { useNavigation } from "@react-navigation/native";
 export default function SignIn() {
   const navigation = useNavigation();
 
-  const loggedIn = async () => {
-    await setItem("logged", "1");
-    navigation.navigate("Gallery");
+  const logout = async () => {
+    try {
+      await removeItem("logged");
+      navigation.navigate("LogIn");
+    } catch (error) {
+      console.log(error);
+    }
   };
 
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
-  function verifyLogin() {
-    email === "pedro@gmail.com" && password === "12345"
-      ? loggedIn()
-      : console.log("ERRO!");
+  function moviePage() {
+    navigation.navigate("Gallery");
   }
 
   return (
-    <View style={stylesSignIn.container}>
-      <View style={stylesSignIn.view}>
-        <View style={stylesSignIn.logo}>
+    <View style={stylesHome.container}>
+      <View style={stylesHome.view}>
+        <View style={stylesHome.logo}>
           <MaterialCommunityIcons
             name="movie-open"
             size={120}
@@ -49,24 +51,15 @@ export default function SignIn() {
           />
         </View>
 
-        <View style={stylesSignIn.main}>
-          <Text style={stylesSignIn.h1}>Filmes e Movies </Text>
-          <TextInput
-            style={stylesSignIn.inputEmail}
-            placeholder="Email"
-            placeholderTextColor="white"
-            onChangeText={(value) => setEmail(value)}
-            value={email}
-          />
-          <TextInput
-            style={stylesSignIn.inputPassword}
-            placeholder="Password"
-            placeholderTextColor="white"
-            onChangeText={(value) => setPassword(value)}
-            value={password}
-          />
-          <TouchableOpacity style={stylesSignIn.button} onPress={verifyLogin}>
-            <Text style={stylesSignIn.h2}>Login!</Text>
+        <View style={stylesHome.main}>
+          <Text style={stylesHome.h1}>Filmes e Movies </Text>
+
+          <TouchableOpacity style={stylesHome.movieButton} onPress={moviePage}>
+            <Text style={stylesHome.h2}>Página de Filmes</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity style={stylesHome.exitButton} onPress={logout}>
+            <Text style={stylesHome.h2}>Sair!</Text>
           </TouchableOpacity>
         </View>
       </View>
