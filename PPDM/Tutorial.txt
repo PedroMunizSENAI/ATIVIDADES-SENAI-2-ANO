@@ -33,35 +33,35 @@ Comandos utilizados em React Native
     ↔️ Instala o pacote Stack que gerencia a navegação entre diferentes telas.
 
 
-
     npm install @react-navigation/bottom-tabs
     ↔️ Instala o pacote bottom-tabs que gerencia a navegação entre diferentes telas.
-
 
 
     npm install @react-navigation/drawer
     ↔️ Instala o pacote drawer que gerencia a navegação entre diferentes telas.
 
 
-
     npx expo install react-native-gesture-handler react-native-reanimated
     ↔️ Instala duas bibliotecas essenciais para interações de gestos e animações suaves em aplicativos React Native.
-
 
 
     npm i react-native-onboarding-swiper
     ↔️ Instala o pacote onboarding-swiper para gerenciar telas onboard 
 
 
-
     npm i lottie-react-native
     ↔️ Instala o pacote lottie para gerenciar animações em arquivo JSON para utilizar na aplicação
-
 
 
     npm i @react-native-async-storage/async-storage
     ↔️ Instala o pacote async-storage para armazenar as informações na memória
 
+
+    npm i react@19.1.1 react-test-renderer@19.1.1
+    ↔️ Instala o pacote test-renderer que cria um ambiente de teste para seu código
+
+    npm i --save-dev jest jest-expo @testing-library/react-native @testing-library/jest-native
+    ↔️ Instala o framework jest responsavel para os testes unitários do código
 
 
     https://icons.expo.fyi/Index
