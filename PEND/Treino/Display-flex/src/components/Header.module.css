@@ -1,0 +1,106 @@
+.header {
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0 1px 5px #000;
+  padding: 15px 50px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  position: relative;
+  z-index: 2;
+}
+
+.header a {
+  margin-right: 0.75rem;
+}
+
+.header nav ul {
+  display: flex;
+}
+
+.navIcon {
+  position: relative;
+  width: 24px;
+  height: 19px;
+  cursor: pointer;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  display: none;
+}
+
+.navIcon span {
+  position: absolute;
+  width: 50%;
+  height: 3px;
+  background-color: black;
+  transition: all 0.2s ease-in-out;
+}
+
+.navIcon span:nth-child(odd) {
+  left: 0;
+}
+
+.navIcon span:nth-child(even) {
+  left: 50%;
+}
+
+.navIcon span:nth-child(1),
+.navIcon span:nth-child(2) {
+  top: 0px;
+}
+.navIcon span:nth-child(3),
+.navIcon span:nth-child(4) {
+  top: 8px;
+}
+.navIcon span:nth-child(5),
+.navIcon span:nth-child(6) {
+  top: 16px;
+}
+
+.navIcon.navOpen span:nth-child(1),
+.navIcon.navOpen span:nth-child(6) {
+  transform: rotate(45deg);
+}
+.navIcon.navOpen span:nth-child(2),
+.navIcon.navOpen span:nth-child(5) {
+  transform: rotate(-45deg);
+}
+
+.navIcon.navOpen span:nth-child(1) {
+  top: 3px;
+  left: 2px;
+}
+
+.navIcon.navOpen span:nth-child(2) {
+  top: 3px;
+  left: calc(50% - 2px);
+}
+.navIcon.navOpen span:nth-child(3) {
+  left: -100%;
+  opacity: 0;
+}
+.navIcon.navOpen span:nth-child(4) {
+  left: 150%;
+  opacity: 0;
+}
+.navIcon.navOpen span:nth-child(5) {
+  top: 11px;
+  left: 2px;
+}
+.navIcon.navOpen span:nth-child(6) {
+  top: 11px;
+  left: calc(50% - 2px);
+}
+
+/* INICIO RESPONSIVIDADE */
+@media (max-width: 760px) {
+  .navIcon {
+    display: inline-block;
+  }
+}
+
+/* FIM RESPONSIVIDADE */

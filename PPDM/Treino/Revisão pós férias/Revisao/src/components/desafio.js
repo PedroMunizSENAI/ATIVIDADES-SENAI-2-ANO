@@ -12,9 +12,9 @@ export default function ButtonComp({ text, funcao }) {
 export default function InputComp({ text, funcao }) {
     return (
       <TextInput 
-        style={stylesSignUp.inputName}
+      style={stylesSignUp.inputName}
         placeholder="Name"
-        placeholderTextColor="black"
+          placeholderTextColor="black"
       />
     );
   }
