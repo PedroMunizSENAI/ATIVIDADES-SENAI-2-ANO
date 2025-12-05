@@ -26,12 +26,14 @@ function Header() {
       </div>
 
       <nav>
-        <ul>
+        <ul
+          className={`${styles.navLinks} ${menuMobile ? styles.navOpen : ""}`}
+        >
           <li>
-            <Link to="/">App</Link>
+            <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to="/Home">Home</Link>
+            <Link to="/sobre">Sobre</Link>
           </li>
         </ul>
       </nav>
